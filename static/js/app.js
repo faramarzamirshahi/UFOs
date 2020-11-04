@@ -4,6 +4,12 @@ const tableData = data;
 var tbody = d3.select("tbody");
 // start building
 // function to add the table to <tbody>
+/*
+By starting our line of code with Object.values, 
+we're telling JavaScript to reference one object from the array of UFO sightings. 
+By adding (dataRow) as the argument, we are saying that we want the values to go into the dataRow. 
+We've added forEach((val) to specify that we want one object per row.
+*/
 function buildTable(data) {
     tbody.html(""); // clear the table i.e. create a blank canvas.
     data.forEach((dataRow) => {
