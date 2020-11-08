@@ -2,8 +2,8 @@
 UofT data analytics
 # OVERVIEW
 Dana is a data journalist who is given an assignment to write about her home town McMinnville, Oregon.<br> McMinnville is famous for its sightings and even has an annual gathering of UFO enthusiasts. She is really excited 
-about this topic as it had already caught her attention during childhood when she read about an article on Farmer TRENT sighting back in 1950. 
-![UFO SPOTTED AT FARMER TRENT'S FARM!](static/images/FarmerTrentSighting.png)
+about this topic as it had already caught her attention during childhood when she read about an article on Farmer TRENT sighting back in 1950.<br> 
+![UFO SPOTTED AT FARMER TRENT'S FARM!](static/images/FarmerTrentSighting.png)<br>
 The only data that she has available is a java script file with siting information. She is going to use her knowledge in html and javascript to display sightings data and also make it dynamic to allow the visitor to filter data on data, city, state, country and shape.
 
 # RESULTS:
@@ -17,13 +17,12 @@ On the dynamic side, the users are displayed a table of Ufo sitings with attribu
 Users can then choose to filter the data on the attributes as the figure below:<br>
 ![Search form](static/images/SearchForm.png)<br>
 The user is then presented with a filtered version of the data<br>
-![Filtered Ufo sitings]()(static/images/UfoSitingsFiltered.png)
+![Filtered Ufo sitings](static/images/UfoSitingsFiltered.png)<br>
 
 
 # Summary: 
-In a summary statement, describe one drawback of this new design and two recommendations for further development.
 The current web-site has the below limitations:<br>
-1- The search is on the fields is case sensitive, this can be enhanced by filtering on upper case in `filterTable()` 
+1- The search is on the fields is case sensitive, it can be made case insenstive by filtering on upper case in `filterTable()` 
 ```
       switch (k) {
           case "datetime":
@@ -54,5 +53,4 @@ function clearForm() {
 }
 d3.selectAll("#clear-form").on("click", clearForm);
 ```
-3- For the date filters we can create a drop down list of the available dates and then use that as the date control
 
