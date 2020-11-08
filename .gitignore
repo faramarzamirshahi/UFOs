@@ -1,3 +1,6 @@
+# my ignore list
+scrtach.html
+scrtach1.html
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
