@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <div class="col-md-3">
+        <form class="btn-dark">
+            <p>Filter Search</p>
+            <ul class="list-group bg-dark">
+                <li class="list-group-item bg-dark" id="faramarz">
+                </li>
+            </ul>
+        </form>
+    </div>
+    <p>The key that you pressed:</p>
+    <p id="key1"></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+<script src="static/js/data.js"></script>
+
+<script>
+// Unique values
+const unique = (value, index, self) => {
+  return self.indexOf(value) === index;
+};
+
+const getDateTime = data.map(item => {
+    var dateList = []
+    dateList = item.datetime;
+    return dateList;
+})
+let dateList = getDateTime.filter(unique)
+function populateDropDown(dateList) {
+  // First, clear out any existing data
+  let group = d3.select("#faramarz")
+  let select = group.append("select").attr("id","dropdown");
+  // Next, loop through each object in the data
+  // and append the option
+  for (let i=0;i< dateList.length;i++) {
+    // Append a row to the table body
+    select.append("option").attr("value",i).text(dateList[i]);
+};
+};
+var changedText = document.getElementById('key1');
+populateDropDown(dateList)
+// initial value of the container
+changedText.textContent = dateList[0]
+
+// event listener on dropdown
+document.getElementById("dropdown").onchange = showchange;
+
+
+// function to show the value
+function showchange(){
+    changedText.textContent = dateList[this.value];
+}
+</script>
+</body>
+</html>
