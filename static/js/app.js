@@ -48,17 +48,8 @@ function updateFilters() {
   
     // 6. Call function to apply all filters and rebuild the table
     // moved under the keypressed function
-    if (processFilter) filterTable();
-
+    filterTable();
   }
-  
-  var processFilter = false;  
-  function keypressed(event) {
-    if (event.code == "Enter") {
-      processFilter = true;
-    }
-  }  
-
 
   // 7. Use this function to filter the table when data is entered.
   function filterTable() {
@@ -95,11 +86,9 @@ function updateFilters() {
 
   
   // 2. Attach an event to listen for changes to each filter
-  document.getElementById("datetime").addEventListener("change", updateFilters);
-  document.getElementById("city").addEventListener("change", updateFilters);
-  document.getElementById("state").addEventListener("change", updateFilters);
-  document.getElementById("country").addEventListener("change", updateFilters);
-  document.getElementById("shape").addEventListener("change", updateFilters);    
+  d3.selectAll("input").on("change", updateFilters);
+
+  
   
   // Build the table when the page loads
   buildTable(tableData);
